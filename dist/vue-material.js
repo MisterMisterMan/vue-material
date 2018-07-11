@@ -2593,8 +2593,8 @@ exports.default = {
           safeAmount = _getToolbarConstrants5.safeAmount;
 
       var toolbar = this.MdApp.toolbar.element;
-      var firstRow = toolbar.querySelector('.md-toolbar-row:first-child');
-      var firstRowHeight = firstRow.offsetHeight;
+      var firstRow = (toolbar!==null)?toolbar.querySelector('.md-toolbar-row:first-child'):null;
+      var firstRowHeight = (!firstRow || firstRow === null || !firstRow.offsetHeight || !firstRow.offsetHeight === null) ? 0 : firstRow.offsetHeight;
 
       this.setToolbarTimer(scrollTop);
       this.setToolbarMarginAndHeight(scrollTop - firstRowHeight, toolbarHeight);
